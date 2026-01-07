@@ -1,7 +1,7 @@
-from manim import* 
+from manim import*
 
-class HelloManim(scene):
+class TestScene(Scene):
     def construct(self):
-        text = Text("Hello,Manim")
+        text = Text("Manim Works!!!")
         self.play(Write(text))
-        self.wait(2) 
+        self.wait(2)
