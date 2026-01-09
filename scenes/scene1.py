@@ -47,5 +47,38 @@ class RotationTest(Scene):
         )
         self.wait(1)
 
-        
 
+class TestDesignerScene(Scene):
+    def construct(self):
+        title = Text("Robotic MAnipulator")
+        subtitle = Text("Visual consept animation")
+
+        subtitle.next_to(title, DOWN)
+
+        self.play(FadeIn(title))
+        self.play(Write(subtitle))
+        self.wait(1)
+
+
+
+class Shapes(Scene):
+    def construct(self):
+        base = Rectangle(width=3, height=0.4)
+        arm = Rectangle(width=2.5, height=0.3)
+
+        arm.next_to(base, RIGHT, buff=0)
+
+        manipulator = VGroup(base, arm)
+
+        self.play(Create(manipulator))
+        self.wait(1)
+
+
+        self.play(
+            Rotate(
+                arm,
+                angle=PI/6,
+                about_point=base.get_right()
+            )
+        )
+        self.wait(1)
